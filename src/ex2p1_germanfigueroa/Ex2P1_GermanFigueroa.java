@@ -36,5 +36,70 @@ public class Ex2P1_GermanFigueroa {
             menuPrincipal();
         }
     }
+    public static void menuBanda(ArrayList<MusicM> banda){
+        System.out.println("1. Ingresar Musico");
+        System.out.println("2. Listar Detalles del Musico");
+        System.out.println("3. Play Song");
+        System.out.println("4. Eliminar Musico");
+        System.out.println("5. Reset");
+        System.out.println("Ingrese una opcion: ");
+        int opcion = entrada.nextInt();
+        entrada.nextLine();
+        
+        switch(opcion){
+            
+            case 1->{
+                System.out.println("Ingresar Musico");
+                
+                System.out.println("Ingrese el nombre del musico: ");
+                String nombre = entrada.nextLine();
+                System.out.println("Ingrese el ID: ");
+                String ID = entrada.nextLine();
+                System.out.println("Ingrese la edad: ");
+                int edad = entrada.nextInt();
+                System.out.println("Ingrese el instrumento que tocara: ");
+                String instrumento = entrada.nextLine();
+                banda.add(new MusicM(nombre, ID, edad, instrumento));
+                System.out.println("Musico Agregado");
+  
+            }
+            
+            case 2->{
+                if(banda.isEmpty()){
+                    System.out.println("No hay musicos");
+                    
+                }else{
+                    for(int i = 0; i < banda.size(); i++){
+                        System.out.println(i + " . " + banda.get(i).getNombre());
+                        
+                    }
+                    System.out.println("Indice");
+                    int indice = entrada.nextInt();
+                    entrada.nextLine();
+                    
+                    if(indice >= 0 && indice < banda.size()){
+                        MusicM m = banda.get(indice);
+                        System.out.println("Nombre: " + m.getNombre());
+                        System.out.println("ID: " + m.getID());
+                        System.out.println("Edad: " + m.getEdad());
+                        System.out.println("Instrumento: " + m.getInstrumento());
+                    }else{
+                        System.out.println("Indice invalido");
+                    }
+                }
+   
+            }
+            
+            case 3->{
+                if(banda.isEmpty()){
+                    System.out.println("No hay musicos");
+                }else{
+                    banda.get(0).PlaySong();
+                }
+            }
+            
+            
+        }
+    }
     
 }

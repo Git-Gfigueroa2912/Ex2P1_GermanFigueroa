@@ -24,6 +24,17 @@ public class Ex2P1_GermanFigueroa {
         System.out.println("Ingrese una opcion: ");
         int opcion = entrada.nextInt();
         entrada.nextLine();
+        
+        if(opcion == 1){
+            menuBanda();
+            menuPrincipal();
+            
+        }else if(opcion == 2){
+            System.out.println("Saliendo del programa");
+            
+        }else{
+            menuPrincipal();
+        }
     }
     
 }

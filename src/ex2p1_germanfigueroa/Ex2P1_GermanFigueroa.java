@@ -26,7 +26,7 @@ public class Ex2P1_GermanFigueroa {
         entrada.nextLine();
         
         if(opcion == 1){
-            menuBanda();
+            menuBanda(banda);
             menuPrincipal();
             
         }else if(opcion == 2){
@@ -118,7 +118,17 @@ public class Ex2P1_GermanFigueroa {
                 }
             }
             
+            case 5->{
+                banda.clear();
+                System.out.println("Banda reiniciada");
+            }
             
+        }
+        System.out.println("Desea seguir editando la banda [s/n]: ");
+        char resp = entrada.next().charAt(0);
+        entrada.nextLine();
+        if(resp == 's' || resp == 'S'){
+            menuBanda(banda);
         }
     }
     

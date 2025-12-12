@@ -98,6 +98,26 @@ public class Ex2P1_GermanFigueroa {
                 }
             }
             
+            case 4->{
+                if(banda.isEmpty()){
+                    System.out.println("No hay musicos");
+                }else{
+                    for(int i = 0; i < banda.size(); i++){
+                        System.out.println(i + " . " + banda.get(i). getNombre());
+                    }
+                    System.out.println("Eliminar: ");
+                    int eliminar = entrada.nextInt();
+                    entrada.nextLine();
+                    
+                    if(eliminar >= 0 && eliminar < banda.size()){
+                        banda.remove(eliminar);
+                        System.out.println("Eliminado");
+                    }else{
+                        System.out.println("Indice invalido");
+                    }
+                }
+            }
+            
             
         }
     }
